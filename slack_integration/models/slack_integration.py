@@ -2,15 +2,27 @@ from odoo import api, fields, models
 import requests
 from requests.exceptions import HTTPError
 
+
 class SlackIntegration(models.Model):
     _name = 'crm.lead'
     _description = 'Slack'
     _inherit = 'crm.lead'
 
-
     @api.model
     def create(self, vals):
-        requests.post('https://hooks.slack.com/services/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', data={'key':'value'})
+        print(vals)
+        try:
+            response = requests.post(
+                'https://hooks.slack.com/services/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',
+                json={"text": "hello world"})
+            
+        # If the response was successful, no Exception will be raised
+            response.raise_for_status()
+        except HTTPError as http_err:
+            print(f'HTTP error occurred: {http_err}')  # Python 3.6
+        except Exception as err:
+            print(f'Other error occurred: {err}')  # Python 3.6
+        else:
+            print('Success!')
         resp = super().create(vals)
-        
         return resp
