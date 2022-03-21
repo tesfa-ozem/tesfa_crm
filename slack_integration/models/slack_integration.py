@@ -13,8 +13,8 @@ class SlackIntegration(models.Model):
         print(vals)
         try:
             response = requests.post(
-                'https://hooks.slack.com/services/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',
-                json={"text": "hello world"})
+                'https://hooks.slack.com/services/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',
+                json={"text": "Hey Jenga\n You have a new applicant"})
             
         # If the response was successful, no Exception will be raised
             response.raise_for_status()
