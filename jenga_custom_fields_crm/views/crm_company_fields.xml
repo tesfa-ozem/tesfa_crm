@@ -9,10 +9,18 @@
                 <page string="Client details">
                     <group string="Information">
                         <field name="gender"/>
+                        <field name="course_applying_for"/>
+                        <field name="intake"/>
+                        <field name="education_level"/>
+                        <field name="course_of_study"/>
+                        <field name="university_attended"/>
+                        <field name="occupation"/>
                         
                     </group>
                     <group class="mt48">
-                        
+                        <field name="employment_status"/>
+                        <field name="organization"/>
+                        <field name="source"/>
                     </group>
                 </page>
             </notebook>
