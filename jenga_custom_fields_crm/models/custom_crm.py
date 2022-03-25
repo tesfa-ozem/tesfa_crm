@@ -12,8 +12,7 @@ class CustomCrm(models.Model):
                                              'Foundations Program of Data Science'),
                                             ('Software Engineering', 'Software Engineering')],
                                            'Which Course are you applying for?', default='')
-    intake = fields.Selection(
-        [('May 2022', 'May 2022')], 'Which Intake Are You Applying For?', default='')
+    intake = fields.Char('Which Intake Are You Applying For?')
     education_level = fields.Selection(
         [('Phd', 'Phd'), ('Masters', 'Masters'), ('Bachelors', 'Bachelors'),
          ('Diploma', 'Diploma'), ('Certificate', 'Certificate')])
