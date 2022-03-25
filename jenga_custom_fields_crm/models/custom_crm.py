@@ -7,9 +7,9 @@ class CustomCrm(models.Model):
 
     gender = fields.Selection(
         [('Male', 'Male'), ('Female', 'Female'), ('Prefer not to say', 'Prefer Not To Say')], 'Gender', default='Male')
-    course_applying_for = fields.Selection([('Core Program in Data Science & AI', 'Core Program in Data Science & AI'),
-                                            ('Foundations Program of Data Science',
-                                             'Foundations Program of Data Science'),
+    course_applying_for = fields.Selection([('Core Course in Data Science & AI', 'Core Course in Data Science & AI'),
+                                            ('Foundations Course of Data Science',
+                                             'Foundations Course of Data Science'),
                                             ('Software Engineering', 'Software Engineering')],
                                            'Which Course are you applying for?', default='')
     intake = fields.Char('Which Intake Are You Applying For?')
