@@ -2,28 +2,27 @@ from odoo import api, fields, models
 
 
 class CustomCrm(models.Model):
-    _name = 'crm.lead'
     _description = 'New Description'
     _inherit = 'crm.lead'
 
     gender = fields.Selection(
-        [('male', 'Male'), ('female', 'Female'), ], 'Gender', default='male')
-    course_applying_for = fields.Selection([('coreProgramInDataScienceAi', 'Core Program in Data Science & AI'),
-                                            ('foundationsProgramOfDataScience',
+        [('Male', 'Male'), ('Female', 'Female'), ('Prefer not to say', 'Prefer Not To Say')], 'Gender', default='Male')
+    course_applying_for = fields.Selection([('Core Program in Data Science & AI', 'Core Program in Data Science & AI'),
+                                            ('Foundations Program of Data Science',
                                              'Foundations Program of Data Science'),
-                                            ('softwareEngineering', 'Software Engineering')],
-                                           'Which Course are you applying for?', default='coreProgramInDataScienceAi')
+                                            ('Software Engineering', 'Software Engineering')],
+                                           'Which Course are you applying for?', default='')
     intake = fields.Selection(
-        [('may2022', 'May 2022')], 'Which Intake Are You Applying For?', default='may2022')
+        [('May 2022', 'May 2022')], 'Which Intake Are You Applying For?', default='')
     education_level = fields.Selection(
-        [('phD', 'PhD'), ('masters', 'Masters'), ('bachelors', 'Bachelors'),
-         ('diploma', 'Diploma'), ('certificate', 'Certificate')])
+        [('Phd', 'Phd'), ('Masters', 'Masters'), ('Bachelors', 'Bachelors'),
+         ('Diploma', 'Diploma'), ('Certificate', 'Certificate')])
     course_of_study = fields.Char('Your Course of Study')
     university_attended = fields.Char('University/Institution Attended?')
     occupation = fields.Char('What is Your Current Occupation?')
     employment_status = fields.Selection(
-        [('partTimeEmployee', 'Part-Time Employee'), ('intern', 'Intern'),
-         ('Self-Employed', 'selfEmployed'), ('student', 'Student'), ('unemployed', 'Unemployed')],
+        [('Full-Time Employee', 'Full-Time Employee'), ('Unemployed', 'Unemployed'),
+         ('Student', 'Student'), ('Intern', 'Intern'), ('Part-Time Employee', 'Part-Time Employee')],
         'Current Status', default='')
     organization = fields.Char('Organization/Institution')
     source = fields.Selection([(
@@ -31,47 +30,47 @@ class CustomCrm(models.Model):
 
     ),
         (
-        "email",
+        "Email",
         "Email"
 
     ),
         (
-        "googleSearch",
+        "Google search",
         "Google search"
 
     ),
         (
-        "instagram",
+        "Instagram",
         "Instagram"
 
     ),
         (
-        "twitter",
+        "Twitter",
         "Twitter"
 
     ),
         (
-        "aFriendReferral",
+        "A Friend Referral",
         "A Friend Referral"
     ),
         (
-        "whatsapp",
+        "Whatsapp",
         "Whatsapp"
     ),
         (
-        "jengaStaff",
+        "JENGA Staff",
         "JENGA Staff",
 
     ), (
-        "jengaStudent",
+        "JENGA Student",
         "JENGA Student",
 
     ),
         (
-        "jengaEvent",
+        "JENGA Event",
         "JENGA Event"
 
-    )], 'Where did you hear about us?', default='email')
+    )], 'Where did you hear about us?', default='')
     # tag_ids = fields.Many2many(
     #     'crm.tag', 'crm_tag_rel', 'crm.custom.tag_ids', 'tag_id', string='Tags',
     #     help="Classify and analyze your lead/opportunity categories like: Training, Service")
