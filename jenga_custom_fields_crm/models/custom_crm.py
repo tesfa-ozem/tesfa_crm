@@ -25,7 +25,7 @@ class CustomCrm(models.Model):
         'Current Status', default='')
     organization = fields.Char('Organization/Institution')
     source = fields.Selection([(
-        "facebook", "Facebook"
+        "Facebook", "Facebook"
 
     ),
         (
@@ -34,8 +34,8 @@ class CustomCrm(models.Model):
 
     ),
         (
-        "Google search",
-        "Google search"
+        "Google Search",
+        "Google Search"
 
     ),
         (
@@ -49,27 +49,30 @@ class CustomCrm(models.Model):
 
     ),
         (
-        "A Friend Referral",
-        "A Friend Referral"
+        "A friend Referral",
+        "A friend Referral"
     ),
         (
         "Whatsapp",
         "Whatsapp"
     ),
         (
-        "JENGA Staff",
-        "JENGA Staff",
+        "Jenga Staff",
+        "Jenga Staff",
 
     ), (
-        "JENGA Student",
-        "JENGA Student",
+        "Jenga Student",
+        "Jenga Student",
 
     ),
         (
-        "JENGA Event",
-        "JENGA Event"
+        "Physical Event",
+        "Physical Event"
 
-    )], 'Where did you hear about us?', default='')
+    ), (
+        "Linkedin", "Linkedin"
+    )
+    ], 'Where did you hear about us?', default='')
     # tag_ids = fields.Many2many(
     #     'crm.tag', 'crm_tag_rel', 'crm.custom.tag_ids', 'tag_id', string='Tags',
     #     help="Classify and analyze your lead/opportunity categories like: Training, Service")
