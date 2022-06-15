@@ -17,7 +17,12 @@
                         <field name="contract_date"/>
                     </group>
                     <group class="mt48">
+                        <field  name="decision_maker"/>
+                        <field  name="documentation_needed"/>
                         <field name="feedback"/>
+                        <field name="needed_to_close"/>
+                        <field name="process_to_close"/>
+                        <field name="status"/>
                         
                     </group>
                 </page>
